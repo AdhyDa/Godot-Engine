@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cps8u7c3gxj3j"]
+
+[ext_resource type="Script" uid="uid://1mmwnuh2k8v7" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8tegq"]
+load_path = "res://.godot/imported/enemyRed1.png-0dab588f6f3664abfd83358ae4d9b1e7.ctex"
+
+[node name="Enemy" type="Area2D" unique_id=1410325322]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_7p1mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=936302250]
+texture_filter = 1
+scale = Vector2(0.65, 0.65)
+texture = SubResource("CompressedTexture2D_8tegq")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=173978222]
+polygon = PackedVector2Array(-16, 27, -30, -10, -19, -27, -7, -22, -6, -16, 6, -16, 7, -22, 18, -27, 30, -10, 16, 27, 7, 24, 12, 7, 10, 6, 8, 10, -8, 10, -10, 6, -12, 7, -7, 24)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1261375579]
+position = Vector2(3, -51)
+rect = Rect2(-10, -4, 14, 14)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

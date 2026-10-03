@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ctejprlmho2yy"]
+
+[ext_resource type="PackedScene" uid="uid://cps8u7c3gxj3j" path="res://scenes/enemy.tscn" id="1_5ovsw"]
+[ext_resource type="Texture2D" uid="uid://cl8kxjl1itxvj" path="res://assets/PNG/Enemies/enemyRed2.png" id="2_qmvpy"]
+
+[node name="DiverEnemy" unique_id=1410325322 instance=ExtResource("1_5ovsw")]
+speed = 400
+hp = 2
+
+[node name="Sprite2D" parent="." index="0" unique_id=936302250]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qmvpy")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=173978222]
+scale = Vector2(0.77, 0.77)
+polygon = PackedVector2Array(-16, 27, -33, -5, -33, -10, -22, -10, -12, -18, -12, -22, -1, -27, 12, -21, 12, -18, 22, -10, 33, -10, 33, -5, 16, 27, 4, 27, 6, 16, -5, 16, -4, 27)
